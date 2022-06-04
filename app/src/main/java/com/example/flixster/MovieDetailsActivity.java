@@ -52,6 +52,14 @@ public class MovieDetailsActivity extends AppCompatActivity{
         rbVoteAverage.setRating(voteAverage / 2.0f);
 
         // set image
+        // show the activity
+        String imageUrl;
+        if (getResources().getConfiguration().orientation == Configuration.ORIENTATION_LANDSCAPE) {
+            imageUrl = movie.getBackdropPath();
+        } else {
+            imageUrl = movie.getPosterPath();
+        }
+        Glide.with(this).load(imageUrl).into(ivPosters);
 
     }
 }
